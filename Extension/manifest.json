@@ -3,12 +3,12 @@
   "description": "Build an Extension!",
   "version": "1.0",
   "manifest_version": 2,
-  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "permissions": ["activeTab", "declarativeContent", "storage", "tabs", "<all_urls>"],
   "background": {
   	"scripts": ["background.js"],
     "persistent": false
 	},
-  "page_action": {
+  "browser_action": {
     "default_popup": "popup.html",
 		"default_icon": {
 			"16": "images/get_started16.png",
@@ -18,29 +18,21 @@
 		}
   },
  "commands": {
- 	"_execute_page_action": {
+ 	"_execute_browser_action": {
       "suggested_key": {
         "default": "Ctrl+Shift+F",
-        "windows": "Alt+Shift+F",
+        "windows": "Ctrl+Shift+F",
         "mac": "Alt+Shift+F"
       }
     }
   },
-          // "toggle-feature-foo": {
-          //   "suggested_key": {
-          //     "default": "Ctrl+Shift+Y",
-          //     "mac": "Command+Shift+Y"
-          //   },
-          //   "description": "Toggle feature foo"
-          //  },
-          // "_execute_browser_action": {
-          //   "suggested_key": {
-          //     "windows": "Ctrl+Shift+Y",
-          //     "mac": "Command+Shift+Y",
-          //     "chromeos": "Ctrl+Shift+U",
-          //     "linux": "Ctrl+Shift+J"
-          //   }
-          // },
+// "toggle-feature-foo": {
+//   "suggested_key": {
+//     "default": "Ctrl+Shift+Y",
+//     "mac": "Command+Shift+Y"
+//   },
+//   "description": "Toggle feature foo"
+//  },
 	"icons": {
 		"16": "images/get_started16.png",
 		"32": "images/get_started32.png",
