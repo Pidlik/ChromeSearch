@@ -1,27 +1,20 @@
 
-let changeColor = document.getElementById('changeColor');
-let searchButton = document.getElementById('searchButton');
-
-chrome.storage.sync.get('color', function(data) {
-	changeColor.style.backgroundColor = data.color;
-	changeColor.setAttribute('value', data.color);
-});
-
-// var app = chrome.runtime.getBackgroundPage();
-
 function hello() {
-  chrome.tabs.executeScript({
-    file: 'alert.js'
-  }); 
+	// Can't use because of: https://developer.chrome.com/extensions/contentSecurityPolicy
+  // chrome.tabs.executeScript({
+  //   file: 'alert.js'
+  // }); 
+  alert("dsfdsfdf");
 }
 
-document.getElementById('searchButton').addEventListener('click', hello);
+// Add event listeners once the DOM has fully loaded by listening for the
+// `DOMContentLoaded` event on the document, and adding your listeners to
+// specific elements when it triggers.
+document.addEventListener('DOMContentLoaded', function () {  
+  document.getElementById('searchButton').addEventListener('click', hello);
 
-
-
-// let hello = function helloThere() {
-// 	console.log("Hello There!");
-// }
+  // var app = chrome.runtime.getBackgroundPage();
+});
 
 // searchButton.onclick = function(element) {
 // 	let color = element.target.value;
